@@ -2,15 +2,15 @@ class Micropost < ActiveRecord::Base
 
 
 def create
-  Category.create(category_params)
+  Micropost.create(micropost_params)
 end
 
 private
 
-def category_params
-  params.require(:category).permit(:content)
-  params.require(:category).permit(:user_id)
+def micropost_params
+  params.require(:micropost).permit(:content)
+  params.require(:micropost).permit(:user_id)
 end
-
+belongs_to :user
 validates :content, :length => { :maximum => 140 }
 end

@@ -9,5 +9,5 @@ def user_params
   params.require(:user).permit(:email)
 end
 
-has_many :microposts
+has many :microposts
 end
